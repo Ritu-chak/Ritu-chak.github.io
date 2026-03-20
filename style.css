@@ -142,7 +142,7 @@ a:hover { color: var(--accent-gld); }
   width: 65%;
   height: 100%;
   /* Replace with the path to your actual image file */
-  background-image: url('heart.png'); 
+  background-image: url('heart.PNG'); 
   background-size: cover;
   background-position: left center;
   opacity: 0.85; 
