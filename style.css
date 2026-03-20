@@ -135,6 +135,28 @@ a:hover { color: var(--accent-gld); }
 .nav-links a:hover { color: var(--accent); }
 
 /* ── Hero ────────────────────────────────────────── */
+.hero-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 65%;
+  height: 100%;
+  /* Replace with the path to your actual image file */
+  background-image: url('heart.png'); 
+  background-size: cover;
+  background-position: left center;
+  opacity: 0.85; 
+  /* Fades the left edge of the image smoothly into the background */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 50%);
+  mask-image: linear-gradient(to right, transparent 0%, black 50%);
+}
+
+.hero-gradient-mask {
+  position: absolute;
+  inset: 0;
+  /* Adds a subtle fade at the bottom to transition into the About section */
+  background: linear-gradient(to bottom, transparent 80%, var(--bg) 100%);
+}
 #hero {
   min-height: 100vh;
   display: flex;
