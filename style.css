@@ -189,6 +189,13 @@ a:hover { color: var(--accent-gld); }
   animation: fadeUp 0.8s ease both;
 }
 
+.hero-name-wrap {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.25rem, 3vw, 2.6rem);
+  margin-bottom: 1.8rem;
+}
+
 .hero-name {
   font-family: var(--font-display);
   font-size: clamp(3.5rem, 8vw, 7.5rem);
@@ -196,12 +203,58 @@ a:hover { color: var(--accent-gld); }
   line-height: 0.95;
   color: var(--ink);
   letter-spacing: -0.03em;
-  margin-bottom: 1.8rem;
+  margin-bottom: 0;
   animation: fadeUp 0.8s 0.1s ease both;
+  position: relative;
+  z-index: 2;
 }
 .hero-name em {
   font-style: italic;
   color: var(--accent);
+}
+
+.hero-heart-shell {
+  position: relative;
+  width: clamp(340px, 40vw, 560px);
+  flex-shrink: 1;
+  animation: fadeUp 0.8s 0.16s ease both;
+  isolation: isolate;
+  transform: perspective(1200px) rotateY(-16deg) rotateX(8deg);
+  transform-style: preserve-3d;
+  transition: transform var(--transition);
+}
+
+.hero-heart-shell::before {
+  content: '';
+  position: absolute;
+  inset: 12% 8% 4% 12%;
+  background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.45), rgba(91,143,199,0.18) 42%, rgba(14,26,44,0.08) 68%, transparent 78%);
+  filter: blur(26px);
+  transform: translateZ(-40px) scale(1.06);
+  z-index: -2;
+  opacity: 0.9;
+}
+
+.hero-heart-shell::after {
+  content: none;
+}
+
+.hero-heart-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 0;
+  box-shadow: none;
+  filter:
+    saturate(1.08)
+    contrast(1.05)
+    drop-shadow(0 20px 26px rgba(15,17,23,0.22))
+    drop-shadow(10px 12px 20px rgba(46,92,138,0.18))
+    drop-shadow(-8px -8px 16px rgba(255,255,255,0.5));
+}
+
+.hero-heart-shell:hover {
+  transform: perspective(1200px) rotateY(-10deg) rotateX(4deg) translateY(-4px);
 }
 
 .hero-tagline {
@@ -657,6 +710,14 @@ footer {
   .research-grid { grid-template-columns: 1fr; }
   .skills-columns { grid-template-columns: 1fr; }
   .nav-links { gap: 1.2rem; }
+  .hero-name-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .hero-heart-shell {
+    width: min(94vw, 460px);
+  }
   .hero-links { flex-direction: column; gap: 0.8rem; }
   .tl-item, .pub-item, .honor-item { grid-template-columns: 60px 1fr; gap: 1rem; }
   .about-stats { flex-wrap: wrap; gap: 1.5rem; }
