@@ -706,19 +706,45 @@ footer {
 
 @media (max-width: 600px) {
   .container { padding: 0 1.4rem; }
-  #hero { padding: 7rem 1.4rem 4rem; }
+  #navbar,
+  #navbar.scrolled {
+    padding: 1rem 1.4rem;
+  }
+  .nav-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+  .nav-links {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 0.7rem 1rem;
+  }
+  .nav-links a {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+  }
+  #hero { padding: 10.5rem 1.4rem 4rem; }
+  .hero-label {
+    max-width: 28ch;
+    line-height: 1.5;
+  }
   .research-grid { grid-template-columns: 1fr; }
   .skills-columns { grid-template-columns: 1fr; }
-  .nav-links { gap: 1.2rem; }
   .hero-name-wrap {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
   }
+  .hero-name {
+    font-size: clamp(3rem, 15vw, 4.2rem);
+  }
   .hero-heart-shell {
-    width: min(94vw, 460px);
+    width: min(100%, 320px);
+    max-width: 100%;
   }
   .hero-links { flex-direction: column; gap: 0.8rem; }
+  .hero-scroll-hint { display: none; }
   .tl-item, .pub-item, .honor-item { grid-template-columns: 60px 1fr; gap: 1rem; }
   .about-stats { flex-wrap: wrap; gap: 1.5rem; }
 }
